@@ -54,7 +54,7 @@
         }
 
         /* <a> element yang menerapkan nilai pada href yang mengandung teks "insensitive" tidak mementingkan huruf kapital*/
-        a[href*="insensitive"i ] {
+        a[href*="insensitive" i] {
             color: cyan;
         }
 
@@ -67,7 +67,7 @@
         /* universal selector */
         /* Menargetkan seluruh tipe elemen */
         * {
-            color: green; 
+            /* color: green;  */
         }
 
         /* Menargetkan seluruh tipe elemen yang mengandung nilai "en" pada atribut lang */
@@ -85,6 +85,79 @@
             border: 1px solid blue;
             padding: 20px;
         }
+
+
+        /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         */
+        /* COMBINATORS */
+        /* adjaction siblings combinators */
+
+        /* img+p { */
+        /* color: rgb(0, 149, 255)
+        } */
+
+        /* general siblings combinators */
+        /* img~p {
+            color: rgb(4, 255, 0)
+        } */
+
+        /* child sellectors (>)*/
+        div>p {
+            background-color: yellow;
+        }
+
+        /* discendant sellectors (spasi)*/
+        div p {
+            background-color: yellow;
+        }
+
+
+        /* pseudo selctor  */
+        /* pseudo elemen class selector */
+        /* macam macam pseudo class https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
+        /* rule akan diterapkan pada sebuah tautan yang belum pernah dikunjungi */
+        a:link {
+            color: red;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan yang sudah pernah dikunjungi */
+        a:visited {
+            color: green;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika diarahkan dengan kursor */
+        a:hover {
+            color: pink;
+        }
+
+        /* rule akan diterapkan pada sebuah tautan ketika ditekan */
+        a:active {
+            color: orange;
+        }
+
+        /* pseudo elemen */
+        /* menggunakan dua titik dua :: agar bisa dibedakan antara pseudo class dan pseudo elemen */
+        /* macam macam pseudo elemn https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements */
+        blockquote::before,
+        blockquote::after {
+            content: '"';
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+
+             /* Rule styling akan diterapkan pada baris pertama disebuah paragraf */
+      
+       }
+        blockquote::first-line{
+            font-size:32px ;
+            font-weight:bolder ;
+            color:rgb(59, 141, 200)
+        }
+    p.baru{
+        text-align: center;
+    }
+    
     </style>
 </head>
 
@@ -153,10 +226,81 @@
             dibungkus dalam border yang memiliki padding 20px
         </p>
     </div>
+    <!-- =========================================================================================================================================== -->
+    <!-- HASIL COMBINATOR -->
+    <!-- adjaction sibling -->
+    <!-- <p>Ini merupakan paragraf pertama. Rule styling tidak akan diterapkan pada elemen paragraf ini.</p>
+    <img src="assets\image\dicoding logo.png" alt="Dicoding logo" width="400px">
+    <p>Ini merupakan paragraf kedua dan ditetapkan setelah elemen gambar. Maka paragraf ini seharusnya menerapkan rule
+        dengan menampilkan teks berwarna hijau.</p>
+    <p>Ini merupakan paragraf ketiga. Letaknya memang setelah elemen gambar, namun tidak diletakkan persis setelahnya,
+        sehingga rule tidak akan diterapkan pada elemen ini.</p> -->
 
+    <!-- adjaction sibling dia akan menerapkan rule pada elemen kedua dari yang telah di sebutkan pada rule -->
+    <!-- dengan catatan induknya sama -->
+
+    <!-- general sibling -->
+
+    <p>Ini merupakan paragraf pertama. Rule styling tidak akan diterapkan pada elemen paragraf ini.</p>
+    <img src="assets\image\dicoding logo.png" alt="Dicoding logo" width="400px">
+    <p>Ini merupakan paragraf kedua dan ditetapkan setelah elemen gambar. Maka paragraf ini menerapkan rule dengan
+        menampilkan teks berwarna hijau.</p>
+    <div>
+        <p>Ini merupakan paragraf ketiga, letaknya setelah elemen gambar, namun paragraf ini dibungkus di dalam div
+            sehingga paragraf ini tidak akan menerapkan rule styling karena tidak memiliki induk yang sama.</p>
+    </div>
+    <p>Ini merupakan paragraf empat. Letaknya memang setelah elemen gambar dan memiliki induk yang sama seperti elemen
+        gambar, sehingga elemen ini akan menerapkan rule dengan menampilkan teks berwarna hijau.</p>
+    <p> ini juga</p>
+    <p>ini juga</p>
+    <div>
+        <p>
+            ini bukan
+        </p>
+    </div>
+
+
+    <!-- child selector (>) -->
+    <!-- rules diterapkan hanya berlaku pada keturnan secara langsung tidak selruh keturunan -->
+    <div>
+
+        <p>Paragraf pertama. di dalam div.</p>
+        <p>Paragraf kedua. di dalam div.</p>
+        <section>
+            <p>Paragraf ketiga. di dalam div namun bukan sebagai anak elemen secara langsung.</p>
+        </section>
+        <p>Paragraf keempat. di dalam div.</p>
+    </div>
+    <p>Paragraf kelima. di luar div.</p>
+    <p>Paragraf keenam. di luar div.</p>
+    </div>
+
+
+    <!-- discendant sellectors (spasi)-->
+    <!-- diterapkan pada seluruh elemen yang menjadi turunannya walaupun secara tidak langsung -->
+    <div>
+        <p>Paragraf pertama. di dalam div.</p>
+        <p>Paragraf kedua. di dalam div.</p>
+        <section>
+            <p>Paragraf ketiga. di dalam div walaupun bukan sebagai anak elemen secara langsung, namun termasuk dalam
+                turunannya.</p>
+        </section>
+        <p>Paragraf keempat. di dalam div.</p>
+    </div>
+    <p>Paragraf kelima. di luar div.</p>
+    <p>Paragraf keenam. di luar div.</p>
+    
+<!-- pseudo selector -->
+<!-- pseudo class selector -->
+<a href="https://www.youtube.com"> link youtube</a>
+
+<!-- pseudo elemen selector -->
+<!-- dia mengaplikasi kan rules terhadap elemen blockquote -->
+<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius error explicabo ipsum molestiae necessitatibus nesciunt possimus reprehenderit sed voluptates. Aliquam aspernatur autem est nobis officia praesentium quas recusandae rem.</blockquote>
+
+<p class="baru">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, excepturi adipisci. Deserunt ratione illum rem pariatur corporis assumenda id non. Nisi dolorum soluta amet harum, dolore doloremque atque architecto esse.</p>
 
 </body>
-
 
 
 
