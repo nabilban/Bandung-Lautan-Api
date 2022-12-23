@@ -1,21 +1,61 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+main {
+    padding: 20px;
+}
+
 
 body {
     font-family: 'Quicksand', sans-serif;
- }
+    margin: 0;
+    padding: 0;
+}
+
+.baratas {
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+nav {
+    background-color: #00a2c6;
+    padding: 5px;
+}
+
+
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-fit: center;
+}
+
+.profile img {
+    width: 200px;
+}
+
+
 
 
 
 h1 {
-    color: green;
+    color: rgb(254, 254, 254);
     margin: 2 em;
 }
 
-h2,
-h3 {
+h2,h3 {
     color: #00a2c6
 }
+
 
 
 
@@ -23,11 +63,12 @@ nav a {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    color: rgb(255, 255, 255)
 }
 
 nav a:hover {
     font-weight: bold;
-    color: #03767c;
+    color: #4fb4b9;
 }
 
 .profile header {
@@ -35,7 +76,13 @@ nav a:hover {
 }
 
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 
+    padding: 20px;
+    margin-top: 20px;
+}
 
 footer {
 
