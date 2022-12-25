@@ -1,9 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-main {
-    padding: 20px;
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+*{
+    box-sizing: border-box;
 }
 
+main {
+    padding: 20px;
+overflow:auto;
+}
+
+header{
+    display:inline;
+}
+
+#content {
+    float: left;
+    width: 75%;
+  }
+ aside{
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+  
+  }
 
 body {
     font-family: 'Quicksand', sans-serif;
@@ -19,16 +46,18 @@ body {
     color: white;
 }
 
+nav {
+    background-color: #00a2c6;
+    padding: 5px;
+    position:sticky;
+    top: 0;
+}
 nav li {
     display: inline;
     list-style-type: none;
     margin-right: 20px;
 }
 
-nav {
-    background-color: #00a2c6;
-    padding: 5px;
-}
 
 
 
@@ -42,8 +71,16 @@ nav {
 .profile img {
     width: 200px;
 }
-
-
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: rgb(255, 255, 255)
+}
+nav a:hover {
+    font-weight: bold;
+    color: #4fb4b9;
+}
 
 
 
@@ -59,17 +96,9 @@ h2,h3 {
 
 
 
-nav a {
-    font-size: 18px;
-    font-weight: 400;
-    text-decoration: none;
-    color: rgb(255, 255, 255)
-}
 
-nav a:hover {
-    font-weight: bold;
-    color: #4fb4b9;
-}
+
+
 
 .profile header {
     text-align: center;
@@ -84,13 +113,10 @@ nav a:hover {
     margin-top: 20px;
 }
 
-footer {
 
-    padding: 20px;
-    color: rgb(255, 255, 255);
-    background-color: #03767c;
 
-}
+
+
 
 footer {
     padding: 20px;
@@ -99,3 +125,4 @@ footer {
     text-align: center;
     font-weight: bold;
 }
+
